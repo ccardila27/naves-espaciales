@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<!-- Acá se realiza la importación de thymeleaf para remplazar los JSP -->
+<head>
+<meta charset="utf-8">
+<title>Editar nave tipo lanzadera</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/">Listado de Naves</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/nueva-lanzadera">Agregar nave lanzadera</a></li>
+				<li class="nav-item"><a class="nav-link" href="/nueva-tripulada">Agregar nave tripulada</a></li>
+				<li class="nav-item"><a class="nav-link" href="/nueva-no-tripulada">Agregar nave no tripulada</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	
+	<br>
+
+	<h2>A continuación, por favor ingrese todos los datos para actualizar la información de una nave tipo lanzadera</h2>
+	
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Actualizar nave lanzadera</h1>
+				<div class="card-body">
+					<form th:action="@{/guardar-lanzadera}" th:object="${naveLanzadera}" method="post">
+					
+					<div class="form-group">
+							<label>Producto ID: </label>
+							<input type="text" name="nombre" th:field="*{id}" class="form-control" readonly="readonly">
+						</div>
+					
+						<div class="form-group">
+							<label>Nombre de la nave: </label>
+							<input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Por favor dígite el nombre de la nave" required>
+						</div>
+						<div class="form-group">
+							<label>Fecha de actividad de la nave: </label>
+							<input type="text" name="fechaActividad" th:field="*{fechaActividad}" class="form-control" placeholder="Por favor dígite los años de actividad de la nave" required>
+						</div>
+						<div class="form-group">
+							<label>País(es) de orígen de la nave: </label>
+							<input type="text" name="paisOrigen" th:field="*{paisOrigen}" class="form-control" placeholder="Por favor dígite el pais de origen de la nave" required>
+						</div>
+						<div class="form-group">
+							<label>Altura en metros de la nave: </label>
+							<input type="number" name="altura" th:field="*{altura}" class="form-control" placeholder="Por favor dígite la altura de la nave (en metros)" required>
+						</div>
+						<div class="form-group">
+							<label>Velocidad en km/h de la nave: </label>
+							<input type="number" name="velocidad" th:field="*{velocidad}" class="form-control" placeholder="Por favor dígite la velocidad de la nave (en km/h)" required>
+						</div>
+						<div class="form-group">
+							<label>Toneladas de peso: </label>
+							<input type="number" name="toneladasPeso" th:field="*{toneladasPeso}" class="form-control" placeholder="Por favor dígite el peso de la nave (en toneladas)" required>
+						</div>
+						<div class="form-group">
+							<label>Toneladas de empuje: </label>
+							<input type="number" name="toneladasEmpuje" th:field="*{toneladasEmpuje}" class="form-control" placeholder="Por favor dígite la fuerza de empuje de la nave (en toneledas)" required>
+						</div>
+						<div class="form-group">
+							<label>Peso máximo de la carga (en toneladas): </label>
+							<input type="number" name="toneladasCarga" th:field="*{toneladasCarga}" class="form-control" placeholder="Por favor dígite el peso máximo de la carga (en toneladas)" required>
+						</div>
+						<div class="form-group">
+							<label>Combustible de la nave: </label>
+							<input type="text" name="tipoCombustible" th:field="*{tipoCombustible}" class="form-control" placeholder="Por favor dígite el nombre de la nave" required>
+						</div>
+						
+						<div class="form-group">
+							<label>Tipo de nave: </label>
+							<select name="tipo" th:field="*{tipo}" class="form-control" required>
+								<option value="Lanzadera">Lanzadera</option>
+							</select>
+						</div>
+						
+						<div class="box-footer">
+							<button class="btn btn-success">Guardar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

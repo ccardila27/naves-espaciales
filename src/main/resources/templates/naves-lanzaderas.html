@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<!-- Acá se realiza la importación de thymeleaf para remplazar los JSP -->
+<head>
+<meta charset="utf-8">
+<title>Naves lanzaderas</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/">Listado de Naves</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/nueva-lanzadera">Agregar nave lanzadera</a></li>
+				<li class="nav-item"><a class="nav-link" href="/nueva-tripulada">Agregar nave tripulada</a></li>
+				<li class="nav-item"><a class="nav-link" href="/nueva-no-tripulada">Agregar nave no tripulada</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	
+	<br>
+
+	<h2>A continuación, la representación de las naves de tipo lanzadera existentes</h2>
+	
+	<br>
+
+	<div class="container text-center">
+		<form class="form-inline" th:action="@{naves-lanzaderas}">
+			<div class="form-group mb-2">
+				<label>Filtrar: </label>
+			</div>
+			<div class="form-goup mx-sm-3 mb-2">
+				<input type="text" name="palabraClave" class="form-control" id="palabraClave" th:value="${palabraClave}" placeholder="Dígite el valor a buscar" required>
+			</div>
+			<input type="submit" class="btn btn-info mb-2" value="Buscar">
+			&nbsp;&nbsp;
+			<input type="button" class="btn btn-secondary mb-2" value="Limpiar" onclick="limpiarCampos()">
+		</form>
+		
+		<br>
+		
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Fecha actividad</th>
+					<th scope="col">País origen</th>
+					<th scope="col">Altura [m]</th>
+					<th scope="col">Velocidad [km/h]</th>
+					<th scope="col">Toneladas de peso</th>
+					<th scope="col">Toneladas de empuje</th>
+					<th scope="col">Toneladas de carga</th>
+					<th scope="col">Tipo de combustible</th>
+					<th scope="col">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="naveLanzadera : ${listaNavesLanzaderas}">
+					<td th:text="${naveLanzadera.id}"></td>
+					<td th:text="${naveLanzadera.nombre}"></td>
+					<td th:text="${naveLanzadera.fechaActividad}"></td>
+					<td th:text="${naveLanzadera.paisOrigen}"></td>
+					<td th:text="${naveLanzadera.altura}"></td>
+					<td th:text="${naveLanzadera.velocidad}"></td>
+					<td th:text="${naveLanzadera.toneladasPeso}"></td>
+					<td th:text="${naveLanzadera.toneladasEmpuje}"></td>
+					<td th:text="${naveLanzadera.toneladasCarga}"></td>
+					<td th:text="${naveLanzadera.tipoCombustible}"></td>
+					<td>
+						<a class="btn btn-primary" th:href="@{'/editar-lanzadera/' + ${naveLanzadera.id}}">Editar</a>
+						&nbsp;
+						<a class="btn btn-danger" th:href="@{'/eliminar-lanzadera/' + ${naveLanzadera.id}}">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	
+	<script type="text/javascript">
+		function limpiarCampos() {
+			window.location="naves-lanzaderas"
+		}
+	</script>
+
+
+
+</body>
+</html>

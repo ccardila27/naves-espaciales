@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Naves espaciales</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+
+
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.columna {
+	float: left;
+	width: 33%;
+	padding-right: 5px;
+}
+
+.fila::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+img {
+	/* Para que sea responsiva */
+	width: 100%;
+}
+</style>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/">Listado de Naves</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link"
+					href="/nueva-lanzadera">Agregar nave lanzadera</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/nueva-tripulada">Agregar nave tripulada</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/nueva-no-tripulada">Agregar nave no tripulada</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<br>
+
+	<h2>Seleccione por favor un tipo de nave a consultar</h2>
+
+	<br>
+
+	<div class="fila">
+		<div class="columna">
+			 <a title="Naves Lanzaderas" href="/naves-lanzaderas">
+				<img src="../images/lanzadora.jpg" alt="Naves Lanzaderas"/>
+			</a>
+		</div>
+		<div class="columna">
+			<a title="Naves Tripuladas" href="/naves-tripuladas">
+				<img src="../images/tripu.jpg" alt="Naves Tripuladas"/>
+			</a>
+		</div>
+		<div class="columna">
+			<a title="Naves No Tripuladas" href="/naves-no-tripuladas">
+				<img src="../images/notripulada.jpg" alt="Naves No Tripuladas"/>
+			</a>
+		</div>
+	</div>
+	<div class="fila">
+		<div class="columna">
+			 <h3 class="text-center">Naves Lanzaderas</h3>
+		</div>
+		<div class="columna">
+			<h3 class="text-center">Naves Tripuladas</h3>
+		</div>
+		<div class="columna">
+			<h3 class="text-center">Naves No Tripuladas</h3>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
