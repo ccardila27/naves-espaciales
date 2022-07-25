@@ -7,11 +7,11 @@ _Existen caracteristicas comunes a todas las naves espaciales, entre ellas, su v
 _Este proyecto de CRUD tipo inventario se trabajó con el patron MVC, el controlador se desarrolló en el lenguaje de programación Java, y el framework Spring boot, para el modelo 
 la de base de datos usando Workbench de MySQL junto a la conexión jdbc, y para la vista, se emplearon Templates html con estilo CSS de bootstrap 4.0._
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
 
 ### Configuración de la base de datos de forma local 📚
 
-La aplicación se encuentra diseñada para ejecutarse de forma local, con lo cual, debe realizarse la respectiva configuración y conexión de la base de datos. Se utilizó una base de datos relacional MySQL para la persistencia de datos. Modificar el archivo **_application.properties_**, que se encuentra en la ruta **_src/reources/application.properties_**
+La aplicación se encuentra diseñada para ejecutarse de forma local, con lo cual, debe realizarse la respectiva configuración y conexión de la base de datos. Se utilizó una base de datos relacional MySQL para la persistencia de datos. Modificar el archivo **_application.properties_**, que se encuentra en la ruta **_src/reources/application.properties_**.
 
 Los parámetros a modificar son:
 ```
@@ -36,3 +36,11 @@ _En donde:_
 Una vez modificados estos archivos, se procede a guardar el archivo **_application.properties_**. 
 
 **NOTA:** Es importante destacar que esta configuración se realizó para una base de datos relacional (SQL) usando MySQL Workbench como gestor de la base de datos y su conexión.
+
+### Creación de registros para las tablas 📑
+
+Una vez desplegada la aplicación, se pueden crear registros de prueba para cada uno de las tablas, con el fin de poder probar todas las funciónes del CRUD. Para esto, se utiliza el archivo **_naves_espaciales.sql_**, que se encuentra en la ruta **_codigoMySQLDDatabase/naves_espaciales.sql_**.
+
+Se ejecutan las sentencias INSERT INTO proporcionadas en el archivo, y así se tendran 15 registros, 5 en cada tabla, agilizando la revisión de la aplicación.
+
+![Muestra de sentencias INSERT INTO](https://user-images.githubusercontent.com/93292970/180868392-4bb0d556-52b7-4c5e-be7a-0bcf5f017248.png)
