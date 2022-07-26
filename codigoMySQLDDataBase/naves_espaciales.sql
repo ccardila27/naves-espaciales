@@ -4,6 +4,8 @@
 
 DROP DATABASE IF EXISTS naves_espaciales;
 
+CREATE DATABASE naves_espaciales;
+
 use naves_espaciales;
 
 # Table	Create Table lanzadera	
