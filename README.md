@@ -9,6 +9,15 @@ la de base de datos usando Workbench de MySQL junto a la conexión jdbc, y para 
 
 ## Pre-requisitos 📋
 
+Para la correcta ejecución de la aplicación, es necesario:
+* **Java**: tener Java instalado.
+* **Apache Maven**: tener instalado .
+* **Servidor MySQL**: tener instalado el servidor local de MySQL.
+* **IDE**: contar con un entorno de desarrollo que permita la ejecución del proyecto (como Eclipse, NetBeans, Spring Tool Suite), o un editor de código fuente como Visual Studio Code.
+
+
+## Configuración general ⚙️
+
 ### Configuración de la base de datos de forma local 📚
 
 La aplicación se encuentra diseñada para ejecutarse de forma local, con lo cual, debe realizarse la respectiva configuración y conexión de la base de datos. Se utilizó una base de datos relacional MySQL para la persistencia de datos. Modificar el archivo **_application.properties_**, que se encuentra en la ruta **_src/reources/application.properties_**.
