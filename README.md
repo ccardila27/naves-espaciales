@@ -2,6 +2,17 @@
 
 _Existen caracteristicas comunes a todas las naves espaciales, entre ellas, su velocidad, altura, y potencia. Sin embargo, también existen ciertas naves de carcaterísticas muy especificas, como si tienen tripulación o no, si orbitan la tierra o no, o si tienen combustible. Por esto, se realizó un programa con POO en base a https://moaramore.com/2016/05/14/clasificacion-de-las-naves-espaciales/._
 
+
+## Despliegue Web 🌐
+
+**¿Es posible ejecutar la aplicación en la web?** 
+
+Para interactuar con el CRUD de los tipos de naves espaciales, ingresar al link donde se encuentra desplegada la aplicación:
+
+https://naves-espaciales-crud.herokuapp.com/
+
+Por medio de _**Heroku**_ se realizó el despliegue de la aplicación en la Web, usando como gestor de base de datos Posgres, incorporada como _Add-On_ (complemento) de Heroku.
+
 ## Frameworks 🚀
 
 _Este proyecto de CRUD tipo inventario se trabajó con el patron MVC, el controlador se desarrolló en el lenguaje de programación Java, y el framework Spring boot, para el modelo 
